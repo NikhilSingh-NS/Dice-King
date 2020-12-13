@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "525249552125",
+    "project_id": "diceking-8bb25",
+    "storage_bucket": "diceking-8bb25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525249552125:android:7cc2c9c660b0e1d439a894",
+        "android_client_info": {
+          "package_name": "com.nikhil.dice_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525249552125-l36ofkl4lvlbvlqt9c6cdsnitpcogfg6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpjgmOehlY53xekpTH6rRbCeKSbXSxMXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "525249552125-l36ofkl4lvlbvlqt9c6cdsnitpcogfg6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
