@@ -1,9 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:dice_app/utils/dependency_assembly.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'routes.dart';
 
-void main() {
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  setUpDependencyAssembly();
   runApp(EasyLocalization(
       supportedLocales: [Locale('en', 'IN'), Locale('hi', 'IN')],
       path: 'assets/translations',
@@ -25,26 +31,6 @@ class MyApp extends StatelessWidget {
       ),
       navigatorKey: Routes().navigatorKey,
       routes: Routes().map,
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Container(),
     );
   }
 }

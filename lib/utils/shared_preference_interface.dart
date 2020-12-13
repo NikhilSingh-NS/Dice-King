@@ -1,7 +1,7 @@
 import 'shared_preference_helper.dart';
 
 //declare all unique shared preferences keys here...
-const String LOGGED_IN_USER_ID = 'LOGGED_IN_USER_ID';
+const String LOGGED_IN_USER_NAME = 'LOGGED_IN_USER_NAME';
 
 abstract class SharedPreferenceInterface {
   factory SharedPreferenceInterface() {

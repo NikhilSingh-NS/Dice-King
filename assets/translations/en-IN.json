@@ -1,0 +1,21 @@
+{
+  "OK": "Okay",
+  "Oops": "Oops!",
+  "pls_connect_to_internet": "Please connect to internet!",
+  "something_went_wrong": "Something went wrong!",
+  "loading": "Loading ...",
+  "login": "Login",
+  "enter_username": "Enter your username",
+  "enter_password": "Enter your password",
+  "invalid_credentials": "Invalid Credentials!",
+  "cancel": "Cancel",
+  "log_out": "Log Out",
+  "log_out_msg": "Are you sure you want to log out?",
+  "pls_enter_password": "Please enter password!",
+  "pls_enter_username": "Please enter username!",
+  "total_score": "Total Score",
+  "attempt_left": "Attempt Left",
+  "session_max": "Single Roll \n Max Score",
+  "check_leaderboard": "Check LeaderBoard",
+  "roll_the_dice": "ROLL THE DICE"
+}
