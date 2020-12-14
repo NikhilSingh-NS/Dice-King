@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: SizeConfig.getWidth(3),
                   ),
                   Text(
-                    'Dice King',
+                    'app_name'.tr(),
                     style: TextStyle(
                         fontSize: SizeConfig.getTextSize(10),
                         fontWeight: FontWeight.bold,

@@ -1,15 +1,22 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
 import 'package:dice_app/utils/dependency_assembly.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'routes.dart';
 
-void main() async{
+void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
+
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   await Firebase.initializeApp();
   setUpDependencyAssembly();
+
   runApp(EasyLocalization(
       supportedLocales: [Locale('en', 'IN'), Locale('hi', 'IN')],
       path: 'assets/translations',
