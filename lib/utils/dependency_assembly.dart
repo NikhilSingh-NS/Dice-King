@@ -1,4 +1,5 @@
 import 'package:dice_app/service/api_interface.dart';
+import 'package:dice_app/service/dice_service.dart';
 import 'package:dice_app/utils/package_info_interface.dart';
 import 'package:dice_app/view_model/leaderboard_provider.dart';
 import 'package:dice_app/view_model/registration_provider.dart';
@@ -21,4 +22,5 @@ void setUpDependencyAssembly(){
   dependencyAssembler.registerFactory(() => HomeScreenProvider());
   dependencyAssembler.registerFactory(() => LeaderBoardProvider());
   dependencyAssembler.registerFactory(() => RegistrationProvider());
+  dependencyAssembler.registerLazySingleton(() => DiceService());
 }

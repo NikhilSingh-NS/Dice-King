@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dice_app/model/user_stats.dart';
 import 'package:dice_app/service/api_interface.dart';
+import 'package:dice_app/service/dice_service.dart';
 import 'package:dice_app/utils/constants.dart';
 import 'package:dice_app/utils/dependency_assembly.dart';
 import 'package:dice_app/utils/package_info_interface.dart';
@@ -9,11 +10,12 @@ import 'package:dice_app/utils/shared_preference_interface.dart';
 import 'package:dice_app/view_model/base_model.dart';
 
 class HomeScreenProvider extends BaseModel {
-  APIInterface _apiInterface = dependencyAssembler<APIInterface>();
+  APIInterface apiInterface = dependencyAssembler<APIInterface>();
   SharedPreferenceInterface sharedPreferenceInterface =
       dependencyAssembler<SharedPreferenceInterface>();
   PackageInfoInterface _packageInfoInterface =
       dependencyAssembler<PackageInfoInterface>();
+  DiceService diceService = dependencyAssembler<DiceService>();
 
   UserStats userStats;
 
@@ -27,7 +29,7 @@ class HomeScreenProvider extends BaseModel {
       final String username =
           await sharedPreferenceInterface.getString(LOGGED_IN_USER_NAME);
       final Map<String, dynamic> result =
-          await _apiInterface.getUserStats(username);
+          await apiInterface.getUserStats(username);
       networkState = result['status'];
       if (result['status'] == NETWORK_STATUS.SUCCESS) {
         userStats = UserStats.fromJson(result['user_stats']);
@@ -54,19 +56,15 @@ class HomeScreenProvider extends BaseModel {
     await sharedPreferenceInterface.setString(LOGGED_IN_USER_NAME, null);
   }
 
-  int roll() {
-    return 1 + Random().nextInt(6);
-  }
-
   Future<bool> rollTheDice() async {
-    int temp = roll();
+    int temp = diceService.rollDice();
     int newScore = userStats.totalScore + temp;
     int attemptLeft = userStats.attemptLeft - 1;
 
     applyState(ViewState.Busy);
     notifyListeners();
 
-    networkState = await _apiInterface.updateStats(userStats.username, {
+    networkState = await apiInterface.updateStats(userStats.username, {
       'attempt_left': attemptLeft,
       'total_score': newScore,
       'last_score': temp,

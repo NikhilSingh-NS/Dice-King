@@ -2,15 +2,25 @@
 
 Dice King
 
-## Getting Started
+## A player can login and play with his allotted 10 chances to roll a dice from any android device and compete with other players.
 
-This project is a starting point for a Flutter application.
+This app contains 4 screens:
+1.Login- Player can login with his credentials from any device.
+2.Registration - Player need to register before login.
+3.Home Screen - Show UserInfo with stats, Roll A Dice option, log out and version name of the app.
+4.LeaderBoard - Shows only users with all the attempts done (i.e. max. 10) for now. Ranks depends upon the total score.
 
-A few resources to get you started if this is your first Flutter project:
+Min SDK: 21
+Architecture Used: MVVM.
+API Used: FireBaseFireStore.
+Backend Database: Cloud FireStore.
+This App also support Hindi Language, design to support any language.
+This App can support most of the screen sizes in portrait mode.
+Also Plugins added such as that can be easily replaceable with new lib./plugins/mocking objects without touching the UI code.
+Flutter Important Packages Used: provider, get_it, easy_localization, cloud_firestore, refer pubspec for more.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Unit Test: Added for roll the dice functionality.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Internet is must for most of the functionality.
+(no internet and api failures handled and tested)
+

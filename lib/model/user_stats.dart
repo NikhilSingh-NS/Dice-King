@@ -1,4 +1,12 @@
 class UserStats {
+  UserStats(
+      {this.username,
+      this.name,
+      this.totalScore,
+      this.lastScore,
+      this.maxScore,
+      this.attemptLeft});
+
   UserStats.fromJson(Map<String, dynamic> json) {
     username = json['username'];
     name = json['name'];
