@@ -90,6 +90,24 @@ class _LoginScreenState extends State<LoginScreen> {
                           height: SizeConfig.getHeight(2),
                         ),
                         buildLoginButton(provider),
+                        SizedBox(
+                          height: SizeConfig.getHeight(1),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            Routes().navigateTo(context, REGISTRATION_SCREEN);
+                          },
+                          child: Center(
+                            child: Text(
+                              'not_sign_up_yet'.tr(),
+                              style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  color: ratingTextBlueColor,
+                                  fontSize: SizeConfig.getTextSize(4.0),
+                                  fontWeight: FontWeight.normal),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),

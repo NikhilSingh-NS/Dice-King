@@ -16,11 +16,6 @@ class LoginScreenProvider extends BaseModel {
       await sharedPreferenceInterface.setString(LOGGED_IN_USER_NAME, username);
       return true;
     }
-    //failure...
-    else if (networkState == NETWORK_STATUS.FAILURE) {
-      return false;
-    }
-    //no internet...
     return false;
   }
 }

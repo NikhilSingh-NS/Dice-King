@@ -32,8 +32,6 @@ class HomeScreenProvider extends BaseModel {
       if (result['status'] == NETWORK_STATUS.SUCCESS) {
         userStats = UserStats.fromJson(result['user_stats']);
         status = true;
-      } else if (result['status'] == NETWORK_STATUS.NO_INTERNET) {
-        status = false;
       } else {
         status = false;
       }
