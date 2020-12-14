@@ -1,5 +1,4 @@
 class UserStats {
-
   UserStats.fromJson(Map<String, dynamic> json) {
     username = json['username'];
     name = json['name'];
@@ -15,4 +14,14 @@ class UserStats {
   int attemptLeft;
   int maxScore;
   int lastScore;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserStats &&
+          runtimeType == other.runtimeType &&
+          username == other.username;
+
+  @override
+  int get hashCode => username.hashCode;
 }

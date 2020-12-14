@@ -14,4 +14,7 @@ abstract class APIInterface {
   Future<Map<String, dynamic>> getAllUserStats();
 
   Future<NETWORK_STATUS> updateStats(String username, Map<String, dynamic> map);
+
+  Future<Map<String, dynamic>> registerUser(String username, String name, String password);
+
 }
