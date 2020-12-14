@@ -68,22 +68,59 @@ class _HomeScreenState extends State<HomeScreen> {
                                       onTap: () {
                                         tryLogOut(provider);
                                       },
-                                      child: Container(
-                                          margin: EdgeInsets.only(
-                                              left: SizeConfig.getWidth(5.0),
-                                              top: SizeConfig.getWidth(1.0)),
-                                          child: Icon(Icons.exit_to_app,
-                                              color: nextIconColor,
-                                              size: SizeConfig.getHeight(3))),
+                                      child: Column(
+                                        children: <Widget>[
+                                          Container(
+                                              margin: EdgeInsets.only(
+                                                  left:
+                                                      SizeConfig.getWidth(5.0),
+                                                  top:
+                                                      SizeConfig.getWidth(1.0)),
+                                              child: Icon(Icons.exit_to_app,
+                                                  color: nextIconColor,
+                                                  size:
+                                                      SizeConfig.getHeight(3))),
+                                          SizedBox(
+                                            height: SizeConfig.getHeight(0.5),
+                                          ),
+                                          Container(
+                                            margin: EdgeInsets.only(
+                                                left: SizeConfig.getWidth(5.0),
+                                                top: SizeConfig.getWidth(1.0)),
+                                            child: Center(
+                                                child: Text('log_out'.tr(),
+                                                    style: TextStyle(
+                                                      color: textColor,
+                                                      fontSize: SizeConfig
+                                                          .getTextSize(4),
+                                                    ))),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
-                                Center(
-                                    child: Text('DICE KING',
-                                        style: TextStyle(
-                                            color: textColor,
-                                            fontSize: SizeConfig.getTextSize(8),
-                                            fontWeight: FontWeight.w500)))
+                                Column(
+                                  children: <Widget>[
+                                    Center(
+                                        child: Text('app_name'.tr(),
+                                            style: TextStyle(
+                                                color: textColor,
+                                                fontSize:
+                                                    SizeConfig.getTextSize(8),
+                                                fontWeight: FontWeight.w500))),
+                                    SizedBox(
+                                      height: SizeConfig.getHeight(0.5),
+                                    ),
+                                    Center(
+                                        child: Text('(${provider.versionName})',
+                                            style: TextStyle(
+                                              color: textColor,
+                                              fontSize:
+                                                  SizeConfig.getTextSize(4),
+                                            ))),
+                                  ],
+                                )
                               ]),
                             ),
                             buildUserInfo(provider),
@@ -104,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Expanded(
-                        flex: 6,
+                        flex: 5,
                         child: Column(
                           children: <Widget>[
                             Expanded(
@@ -113,7 +150,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Center(
                                   child: provider.state == ViewState.Idle
                                       ? Text(
-                                          provider.userStats.lastScore.toString(),
+                                          provider.userStats.lastScore
+                                              .toString(),
                                           style: TextStyle(
                                               fontSize:
                                                   SizeConfig.getTextSize(25)),
@@ -372,7 +410,7 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
           child: Center(
             child: Text(
-              'roll_the_dice'.tr(),
+              'roll_a_dice'.tr(),
               style: TextStyle(
                   color: provider.userStats.attemptLeft == 0
                       ? Colors.grey.withOpacity(0.6)

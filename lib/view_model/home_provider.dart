@@ -4,6 +4,7 @@ import 'package:dice_app/model/user_stats.dart';
 import 'package:dice_app/service/api_interface.dart';
 import 'package:dice_app/utils/constants.dart';
 import 'package:dice_app/utils/dependency_assembly.dart';
+import 'package:dice_app/utils/package_info_interface.dart';
 import 'package:dice_app/utils/shared_preference_interface.dart';
 import 'package:dice_app/view_model/base_model.dart';
 
@@ -11,10 +12,14 @@ class HomeScreenProvider extends BaseModel {
   APIInterface _apiInterface = dependencyAssembler<APIInterface>();
   SharedPreferenceInterface sharedPreferenceInterface =
       dependencyAssembler<SharedPreferenceInterface>();
+  PackageInfoInterface _packageInfoInterface =
+      dependencyAssembler<PackageInfoInterface>();
 
   UserStats userStats;
 
   bool isReady = false;
+
+  String versionName = '';
 
   Future<bool> getUserStats() async {
     bool status = false;
@@ -34,9 +39,17 @@ class HomeScreenProvider extends BaseModel {
       }
       isReady = true;
       notifyListeners();
+      setVersionName();
       return status;
     }
     return true;
+  }
+
+  void setVersionName() {
+    _packageInfoInterface.getAppVersion().then((value) {
+      versionName = value;
+      notifyListeners();
+    });
   }
 
   Future<void> logout() async {
