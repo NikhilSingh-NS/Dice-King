@@ -1,10 +1,17 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class LeaderBoardScreen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
+    return _LeaderBoardScreenState();
+  }
+
+}
+
+class _LeaderBoardScreenState extends State<LeaderBoardScreen>{
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 
 }
