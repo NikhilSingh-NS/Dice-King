@@ -44,7 +44,6 @@ class _LoginScreenState extends State<LoginScreen> {
               width: double.infinity,
               height: double.infinity,
               color: Colors.white,
-              //child: ImageLoader().loadFromAssets('bg.jpg')
             ),
           ),
           Scaffold(
@@ -143,10 +142,8 @@ class _LoginScreenState extends State<LoginScreen> {
               keyboardType: TextInputType.text,
               controller: controller,
               decoration: InputDecoration(
-                //contentPadding: EdgeInsets.symmetric(vertical: SizeConfig.getHeight(1)),
                 isDense: true,
                 hintText: hintText,
-                //border: InputBorder.none,
                 hintStyle: TextStyle(
                     fontSize: SizeConfig.getTextSize(4.5),
                     color: nextIconColor),

@@ -16,11 +16,11 @@ API Used: FireBaseFireStore.
 Backend Database: Cloud FireStore.
 This App also support Hindi Language, design to support any language.
 This App can support most of the screen sizes in portrait mode.
-Also Plugins added such as that can be easily replaceable with new lib./plugins/mocking objects without touching the UI code.
+Also Plugins added such as, that can be easily replaceable with new lib./plugins/mocking objects without touching the UI code.
 Flutter Important Packages Used: provider, get_it, easy_localization, cloud_firestore, refer pubspec for more.
 
 Unit Test: Added for roll the dice functionality.
 
-Internet is must for most of the functionality.
-(no internet and api failures handled and tested)
+This project built with flutter stable version - 1.17.1
 
+Internet is must for most of the functionality.

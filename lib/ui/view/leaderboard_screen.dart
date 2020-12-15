@@ -182,7 +182,6 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
               margin: EdgeInsets.all(1.0),
               child: Container(
                 decoration: BoxDecoration(
-                    //borderRadius:BorderRadius.only(topLeft: Radius.circular(20.0), bottomLeft: Radius.circular(20.0)),
                     gradient: LinearGradient(
                         begin: Alignment.bottomLeft,
                         end: Alignment.topRight,
